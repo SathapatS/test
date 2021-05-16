@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style> h1 {text-align: center;}
+p {text-align: center;}
+</style>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<h1>Calibration management</h1>
+<p>User list</p>
+<table class="table table-bordered">
+    <style> th {text-align: center;}
+        tr {text-align: left;}
+        </style>
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Name</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in data %}
+      <tr>
+        <td>{{row.0}}</td>
+        <td>{{row.1}}</td>
+        <td>{{row.2}}</td>
+        <td>
+          <a href="" class="btn btn-warning btn-xs" data-toggle="modal" data-target="">Edit</a>
+          <a href="" class="btn btn-danger btn-xs" onclick="return confirm('คุณต้องการลบข้อมูลหรือไม่?')">Delete</a>
+        </td>
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  <a href="/regis" class="btn btn-primary">เพิ่มรายชื่อใหม่</a>
+
+
+
+</body>
+</html>
